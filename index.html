@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home | Rising Empowerment Sports Ministries</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+/* ── HOME-SPECIFIC ── */
+.hero{
+  margin-top:72px;min-height:92vh;
+  background:var(--navy);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(244,180,0,.06) 0%,transparent 55%);
+  pointer-events:none;
+}
+.hero-wm{
+  position:absolute;right:-60px;top:50%;transform:translateY(-50%);
+  font-size:680px;line-height:1;color:rgba(244,180,0,.04);
+  font-family:Georgia,serif;pointer-events:none;user-select:none;
+}
+.hero-inner{
+  max-width:1260px;margin:0 auto;padding:0 7%;width:100%;
+  display:grid;grid-template-columns:1fr 420px;
+  gap:60px;align-items:center;position:relative;z-index:2;
+}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.hero-kicker span{font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;letter-spacing:3.5px;text-transform:uppercase;color:var(--gold)}
+.kicker-line{width:30px;height:2px;background:var(--gold)}
+h1.hero-h{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(52px,6.5vw,88px);font-weight:700;
+  line-height:.93;color:var(--white);
+  letter-spacing:.5px;text-transform:uppercase;margin-bottom:30px;
+}
+h1.hero-h .g{color:var(--gold)}
+.hero-body{font-size:16px;line-height:1.8;color:rgba(255,255,255,.6);max-width:480px;margin-bottom:40px}
+.hero-body strong{color:rgba(255,255,255,.9);font-weight:600}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
+.hero-visual::before{
+  content:'';position:absolute;width:380px;height:380px;border-radius:50%;
+  background:radial-gradient(circle,rgba(244,180,0,.1) 0%,transparent 70%);
+  animation:glow 5s ease-in-out infinite;
+}
+@keyframes glow{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+.hero-visual img{
+  width:100%;max-width:380px;
+  filter:drop-shadow(0 24px 64px rgba(244,180,0,.25));
+  animation:bob 7s ease-in-out infinite;position:relative;z-index:1;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* mission */
+.mission{background:var(--white);border-bottom:1px solid var(--border)}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:56px}
+.m-card{background:var(--white);padding:40px 32px 36px;transition:background .25s;position:relative}
+.m-card:hover{background:var(--off)}
+.m-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.m-card:hover::before{transform:scaleX(1)}
+.m-card:nth-child(2)::before{background:var(--navy)}
+.m-card:nth-child(3)::before{background:var(--red)}
+.mc-num{font-family:'Oswald',sans-serif;font-size:52px;font-weight:700;color:var(--border);line-height:1;margin-bottom:20px;letter-spacing:-1px}
+.mc-title{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
+.mc-text{font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:22px}
+.mc-link{display:inline-flex;align-items:center;gap:7px;font-family:'Oswald',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:2px;transition:color .2s,gap .2s}
+.mc-link:hover{color:var(--gold);gap:11px}
+.mc-link::after{content:'→'}
+
+/* programs */
+.programs{background:var(--navy);padding:96px 7%}
+.prog-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px}
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06)}
+.p-card{background:var(--navy2);overflow:hidden;transition:transform .35s,box-shadow .35s;position:relative}
+.p-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.4);z-index:2}
+.pc-img{height:210px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.bg1{background:linear-gradient(140deg,#0f2240,#1c3a6e)}
+.bg2{background:linear-gradient(140deg,#1e0610,#38080f)}
+.bg3{background:linear-gradient(140deg,#060f1e,#0d1d38)}
+.pc-img img{height:130px;width:auto;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(0,0,0,.55));transition:transform .35s}
+.p-card:hover .pc-img img{transform:scale(1.06)}
+.pc-tag{position:absolute;top:14px;left:14px;font-family:'Oswald',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 11px}
+.tag-gold{background:var(--gold);color:var(--navy)}.tag-red{background:var(--red);color:#fff}.tag-blue{background:#1a3a7a;color:#fff}
+.pc-body{padding:26px 26px 30px}
+.pc-name{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--white);margin-bottom:10px;line-height:1.1}
+.pc-desc{font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:20px}
+.pc-link{display:inline-flex;align-items:center;gap:7px;font-family:'Oswald',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;transition:gap .2s}
+.pc-link:hover{gap:11px}
+.pc-link::after{content:'→'}
+.p-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.p-card:hover::after{transform:scaleX(1)}
+
+/* faith */
+.faith{background:var(--off);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.faith-inner{max-width:860px;margin:0 auto;text-align:center}
+.faith-cross{font-size:42px;color:var(--gold);margin-bottom:24px;display:block}
+.faith-verse{font-family:'Oswald',sans-serif;font-size:clamp(24px,3.5vw,38px);font-weight:600;font-style:italic;color:var(--navy);line-height:1.35;margin-bottom:16px;letter-spacing:.3px}
+.faith-ref{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:48px}
+.faith-pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.fp{background:var(--white);padding:28px 20px 24px;border-top:3px solid var(--navy);transition:transform .25s,box-shadow .25s}
+.fp:nth-child(2){border-top-color:var(--gold)}.fp:nth-child(3){border-top-color:var(--red)}.fp:nth-child(4){border-top-color:var(--navy)}
+.fp:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.fp-icon{font-size:28px;margin-bottom:10px}
+.fp-t{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-bottom:7px}
+.fp-d{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* cta */
+.cta{background:var(--navy);padding:100px 7%;position:relative;overflow:hidden}
+.cta::after{content:'GIVE';position:absolute;right:5%;top:50%;transform:translateY(-50%);font-family:'Oswald',sans-serif;font-size:260px;font-weight:700;color:rgba(244,180,0,.04);pointer-events:none;line-height:1;letter-spacing:-5px}
+.cta-inner{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;position:relative;z-index:1}
+.cta h2{font-family:'Oswald',sans-serif;font-size:clamp(38px,5vw,68px);font-weight:700;text-transform:uppercase;color:var(--white);line-height:.95;letter-spacing:.5px;margin-bottom:20px}
+.cta h2 span{color:var(--gold)}
+.cta p{font-size:15px;line-height:1.8;color:rgba(255,255,255,.55);max-width:500px}
+.cta-btns{display:flex;flex-direction:column;gap:12px;align-items:center;flex-shrink:0}
+.cta-note{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;font-family:'Oswald',sans-serif;margin-top:4px}
+
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-visual{justify-content:center;margin-top:20px}
+  .hero-body{margin:0 auto 40px}
+  .hero-btns{justify-content:center}
+  .hero-kicker{justify-content:center}
+  .prog-grid{grid-template-columns:1fr}
+  .cta-inner{grid-template-columns:1fr;text-align:center}
+  .cta-btns{flex-direction:row;justify-content:center}
+  .cta p{margin:0 auto}
+  .faith-pillars{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .mission-grid{grid-template-columns:1fr;background:none;gap:1px}
+  .prog-header{flex-direction:column;align-items:flex-start}
+  .programs{padding:70px 5%}
+  .cta{padding:70px 5%}
+  .faith{padding:70px 5%}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="index.html" class="h-logo"><img src="assets/logo-main.png" alt="Rising Empowerment Sports Ministries"/></a>
+  <ul class="h-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="get-involved.html#donate" class="donate-btn">Donate</a></li>
+  </ul>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wm">✞</div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-kicker"><div class="kicker-line"></div><span>Winton, CA &nbsp;·&nbsp; Nonprofit Ministry</span></div>
+      <h1 class="hero-h">BUILDING<br>TOTAL <span class="g">ATHLETES</span><br>FOR LIFE.</h1>
+      <p class="hero-body"><strong>Rising Empowerment Sports Ministries</strong> brings youth together through sport, life skills, and scripture — developing champions on the field and in life.</p>
+      <div class="hero-btns">
+        <a href="programs.html" class="btn btn-gold">Explore Programs</a>
+        <a href="get-involved.html#donate" class="btn btn-ghost">Support Our Mission</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/logo-main.png" alt="RESM Logo"/>
+    </div>
+  </div>
+</section>
+<div class="hero-bar"></div>
+
+<!-- MISSION -->
+<section class="section mission" id="mission">
+  <div class="s-inner">
+    <div class="s-label">Who We Are</div>
+    <h2 class="s-h">MADE FOR SPORT.<br>MADE FOR <span>MORE.</span></h2>
+    <p class="s-p">We believe every young person was created with purpose. We walk alongside youth, helping them grow in every dimension of life — physically, mentally, and spiritually.</p>
+    <div class="mission-grid">
+      <div class="m-card reveal">
+        <div class="mc-num">01</div>
+        <div class="mc-title">Who We Are</div>
+        <p class="mc-text">A faith-rooted community in Winton, CA that understands there is something bigger than sport. Helping youth grow as total athletes and children of God.</p>
+        <a href="about.html" class="mc-link">Our Story</a>
+      </div>
+      <div class="m-card reveal d1">
+        <div class="mc-num">02</div>
+        <div class="mc-title">What We Do</div>
+        <p class="mc-text">We connect youth to competitive teams, skill-building programs, and a caring community where they can develop purpose — both during and beyond their sport.</p>
+        <a href="programs.html" class="mc-link">Our Programs</a>
+      </div>
+      <div class="m-card reveal d2">
+        <div class="mc-num">03</div>
+        <div class="mc-title">Why We Do It</div>
+        <p class="mc-text">We are inspired to make a difference in every life we touch — empowering athletes to lead their teams, communities, and the next generation through faith and character.</p>
+        <a href="about.html#mission" class="mc-link">Our Mission</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="s-inner">
+    <div class="prog-header">
+      <div><div class="s-label">What We Offer</div><h2 class="s-h light">OUR <span>PROGRAMS</span></h2></div>
+      <a href="programs.html" class="btn btn-gold">View All Programs</a>
+    </div>
+    <div class="prog-grid">
+      <div class="p-card reveal">
+        <div class="pc-img bg1"><span class="pc-tag tag-gold">Sports Team</span><img src="assets/logo-warriors.jpg" alt="The Warriors"/></div>
+        <div class="pc-body">
+          <div class="pc-name">The Warriors</div>
+          <p class="pc-desc">Our flagship sports team where young athletes compete, grow, and are rooted in faith. Warriors play with purpose — on and off the field.</p>
+          <a href="programs.html#warriors" class="pc-link">Learn More</a>
+        </div>
+      </div>
+      <div class="p-card reveal d1">
+        <div class="pc-img bg2"><span class="pc-tag tag-red">At-Risk Youth</span><img src="assets/logo-erl.png" alt="ERL"/></div>
+        <div class="pc-body">
+          <div class="pc-name">Empowerment Redemption League</div>
+          <p class="pc-desc">Dedicated to at-risk youth — providing a safe space, a community, and a path to redemption through sports and the power of faith.</p>
+          <a href="programs.html#erl" class="pc-link">Learn More</a>
+        </div>
+      </div>
+      <div class="p-card reveal d2">
+        <div class="pc-img bg3"><span class="pc-tag tag-blue">Mental Skills</span><img src="assets/logo-chess.png" alt="Warriors Chess Club"/></div>
+        <div class="pc-body">
+          <div class="pc-name">Warriors Chess Club</div>
+          <p class="pc-desc">Champions think before they act. Our chess club sharpens the mind and builds strategic thinking, patience, and discipline rooted in faith.</p>
+          <a href="programs.html#chess" class="pc-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Active Programs</div></div>
+    <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Youth Served</div></div>
+    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Community</div></div>
+    <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Faith & Purpose</div></div>
+  </div>
+</div>
+
+<!-- FAITH -->
+<section class="section faith">
+  <div class="faith-inner">
+    <span class="faith-cross">✞</span>
+    <div class="s-label" style="justify-content:center;margin-bottom:20px">Our Foundation</div>
+    <p class="faith-verse">"I can do all things through Christ who strengthens me."</p>
+    <p class="faith-ref">— Philippians 4:13</p>
+    <div class="faith-pillars">
+      <div class="fp reveal"><div class="fp-icon">🏆</div><div class="fp-t">Sports</div><p class="fp-d">Competitive teams and leagues that build discipline, teamwork, and healthy competition.</p></div>
+      <div class="fp reveal d1"><div class="fp-icon">📖</div><div class="fp-t">Skills</div><p class="fp-d">Life skills, leadership, and strategic thinking to shape well-rounded young leaders.</p></div>
+      <div class="fp reveal d2"><div class="fp-icon">✞</div><div class="fp-t">Faith</div><p class="fp-d">Scripture-based values woven into every program, anchoring athletes in purpose.</p></div>
+      <div class="fp reveal d3"><div class="fp-icon">🤝</div><div class="fp-t">Community</div><p class="fp-d">A place where every child belongs, is valued, and empowered to rise.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="donate">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <div class="s-label">Make an Impact</div>
+      <h2>HELP US CHANGE<br>A CHILD'S <span>LIFE.</span></h2>
+      <p>Your donation directly funds equipment, programs, and opportunities for youth in our community. Every dollar invested in a child is a seed planted for tomorrow.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="get-involved.html#donate" class="btn btn-gold" style="min-width:200px;text-align:center">Donate Now</a>
+      <a href="get-involved.html" class="btn btn-ghost" style="min-width:200px;text-align:center">Get Involved</a>
+      <p class="cta-note">501(c)(3) · All donations tax deductible</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand"><img src="assets/logo-main.png" alt="RESM"/><p>A nonprofit organization dedicated to empowering youth through sports, life skills, and faith in Winton, CA.</p><div class="ft-socials"><a href="#" class="fsoc">FB</a><a href="#" class="fsoc">IG</a><a href="#" class="fsoc">YT</a></div></div>
+    <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h5>Programs</h5><ul><li><a href="programs.html#warriors">The Warriors</a></li><li><a href="programs.html#erl">ERL</a></li><li><a href="programs.html#chess">Chess Club</a></li><li><a href="programs.html">Sports League</a></li></ul></div>
+    <div class="ft-col"><h5>Contact</h5><ul class="ft-contact"><li><span class="ico">📍</span><span>Winton, CA 95388</span></li><li><span class="ico">📞</span><span>209-626-6133</span></li><li><span class="ico">✉</span><span>risingempowermentministries@gmail.com</span></li><li><span class="ico">🌐</span><span>risingempowermentsportsministries.org</span></li></ul></div>
+  </div>
+  <div class="ft-bottom"><p>© 2025 Rising Empowerment Sports Ministries · All rights reserved · <a href="#">Privacy Policy</a></p><div class="ft-badge">✞ &nbsp;501(c)(3) Nonprofit Organization</div></div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

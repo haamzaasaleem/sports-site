@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact | Rising Empowerment Sports Ministries</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+/* ── CONTACT SPECIFIC ── */
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+
+.contact-info{}
+.ci-block{margin-bottom:36px}
+.ci-block h3{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--navy);margin-bottom:16px;padding-bottom:10px;border-bottom:2px solid var(--gold)}
+.ci-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
+.ci-icon{width:40px;height:40px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.ci-text h4{font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:3px}
+.ci-text p,.ci-text a{font-size:14px;color:var(--muted);line-height:1.55;text-decoration:none;transition:color .2s}
+.ci-text a:hover{color:var(--gold)}
+
+/* social links */
+.ci-socials{display:flex;gap:10px;margin-top:8px}
+.ci-soc{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 18px;
+  border:1px solid var(--border);
+  font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--navy);text-decoration:none;
+  transition:all .25s;
+}
+.ci-soc:hover{background:var(--navy);color:var(--gold);border-color:var(--navy)}
+
+/* form */
+.contact-form-wrap{background:var(--off);border:1px solid var(--border);padding:48px 40px}
+.contact-form-wrap h3{font-family:'Oswald',sans-serif;font-size:24px;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:6px;letter-spacing:.5px}
+.contact-form-wrap p{font-size:14px;color:var(--muted);margin-bottom:32px;line-height:1.6}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:13px 16px;
+  border:1px solid var(--border);
+  font-family:'Inter',sans-serif;font-size:14px;color:var(--text);
+  outline:none;background:#fff;
+  transition:border-color .2s;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#aab}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{width:100%;padding:15px;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:background .25s;margin-top:4px}
+.form-submit:hover{background:#dba100}
+
+/* map placeholder */
+.map-band{background:var(--navy);height:360px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.map-band::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,180,0,.05) 0%,transparent 60%)}
+.map-content{text-align:center;position:relative;z-index:1}
+.map-content .map-pin{font-size:48px;margin-bottom:16px;display:block}
+.map-content h3{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;color:var(--white);margin-bottom:8px;letter-spacing:.5px}
+.map-content p{font-size:14px;color:rgba(255,255,255,.5)}
+.map-content a{display:inline-block;margin-top:20px;color:var(--gold);font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-bottom:1px solid rgba(244,180,0,.4);padding-bottom:2px}
+
+/* faq */
+.faq{background:var(--off);border-top:1px solid var(--border)}
+.faq-list{max-width:800px;margin:48px auto 0}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{
+  width:100%;text-align:left;padding:20px 0;
+  font-family:'Oswald',sans-serif;font-size:17px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.5px;color:var(--navy);
+  background:none;border:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  transition:color .2s;
+}
+.faq-q:hover{color:var(--gold)}
+.faq-icon{font-size:20px;transition:transform .3s;flex-shrink:0;color:var(--gold)}
+.faq-a{display:none;padding:0 0 20px;font-size:14px;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-item.open .faq-a{display:block}
+
+@media(max-width:1024px){.contact-grid{grid-template-columns:1fr;gap:48px}}
+@media(max-width:768px){
+  .form-row{grid-template-columns:1fr}
+  .contact-form-wrap{padding:32px 24px}
+  .ci-socials{flex-wrap:wrap}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="index.html" class="h-logo"><img src="assets/logo-main.png" alt="Rising Empowerment Sports Ministries"/></a>
+  <ul class="h-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="get-involved.html#donate" class="donate-btn">Donate</a></li>
+  </ul>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+    <h1>CONTACT <span>US</span></h1>
+    <p>Have a question, want to get involved, or just want to learn more? We'd love to hear from you. Reach out and someone from our team will get back to you shortly.</p>
+  </div>
+</div>
+<div class="hero-bar"></div>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="s-inner">
+    <div class="contact-grid">
+
+      <!-- Info -->
+      <div class="contact-info reveal">
+        <div class="ci-block">
+          <h3>Get in Touch</h3>
+          <div class="ci-item">
+            <div class="ci-icon">📍</div>
+            <div class="ci-text">
+              <h4>Location</h4>
+              <p>Winton, CA 95388</p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">📞</div>
+            <div class="ci-text">
+              <h4>Phone</h4>
+              <a href="tel:2096266133">209-626-6133</a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">✉</div>
+            <div class="ci-text">
+              <h4>Email</h4>
+              <a href="mailto:risingempowermentministries@gmail.com">risingempowermentministries@gmail.com</a>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">🌐</div>
+            <div class="ci-text">
+              <h4>Website</h4>
+              <a href="https://www.risingempowermentsportsministries.org" target="_blank">risingempowermentsportsministries.org</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ci-block">
+          <h3>Follow Us</h3>
+          <p style="font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.6">Stay up to date on programs, events, and ministry news.</p>
+          <div class="ci-socials">
+            <a href="#" class="ci-soc">FB Facebook</a>
+            <a href="#" class="ci-soc">IG Instagram</a>
+            <a href="#" class="ci-soc">YT YouTube</a>
+          </div>
+        </div>
+
+        <div class="ci-block">
+          <h3>Office Hours</h3>
+          <div style="font-size:14px;color:var(--muted);line-height:2">
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:6px"><span>Monday – Friday</span><span style="color:var(--navy);font-weight:600">9:00 AM – 5:00 PM</span></div>
+            <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:6px"><span>Saturday</span><span style="color:var(--navy);font-weight:600">By Appointment</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Sunday</span><span style="color:var(--muted)">Closed</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap reveal d1">
+        <h3>Send Us a Message</h3>
+        <p>Fill out the form below and we'll get back to you within 1-2 business days.</p>
+        <form onsubmit="return false">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name"/></div>
+            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"/></div>
+          </div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(xxx) xxx-xxxx"/></div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option value="">Select a topic...</option>
+              <option>General Inquiry</option>
+              <option>Program Information</option>
+              <option>Volunteer Opportunities</option>
+              <option>Donation / Partnership</option>
+              <option>Media / Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message</label><textarea rows="5" placeholder="How can we help you?"></textarea></div>
+          <button type="submit" class="form-submit">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<div class="map-band">
+  <div class="map-content">
+    <span class="map-pin">📍</span>
+    <h3>Winton, California</h3>
+    <p>Serving the Winton, CA community and surrounding areas</p>
+    <a href="https://maps.google.com/?q=Winton,CA" target="_blank">Open in Google Maps →</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section class="section faq">
+  <div class="s-inner" style="text-align:center">
+    <div class="s-label" style="justify-content:center">Common Questions</div>
+    <h2 class="s-h">FREQUENTLY ASKED <span>QUESTIONS</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">Is there a cost to participate in RESM programs? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We strive to keep our programs accessible to all youth regardless of financial situation. Please contact us directly to discuss program fees and scholarship opportunities for families in need.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What age groups do you serve? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Our programs are designed to serve youth of various age groups. Contact us for specific age requirements for each program — we work hard to ensure every child has a place in our community.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Does my child need to be Christian to participate? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Our programs are open to all youth. While our ministry is faith-based and centered on Christian values, every child is welcome regardless of their religious background. We simply ask for respect for our faith-centered environment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How can I donate to support the ministry? <span class="faq-icon">+</span></button>
+        <div class="faq-a">You can donate through our Get Involved page or by contacting us directly via email or phone. We are a registered 501(c)(3) nonprofit, so all donations are tax deductible.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I become a volunteer? <span class="faq-icon">+</span></button>
+        <div class="faq-a">We welcome volunteers with a variety of skills — coaches, mentors, event helpers, media/photography, and more. Fill out our volunteer inquiry form on the Get Involved page or reach out to us directly and we'll find the right fit for you.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand"><img src="assets/logo-main.png" alt="RESM"/><p>A nonprofit organization dedicated to empowering youth through sports, life skills, and faith in Winton, CA.</p><div class="ft-socials"><a href="#" class="fsoc">FB</a><a href="#" class="fsoc">IG</a><a href="#" class="fsoc">YT</a></div></div>
+    <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h5>Programs</h5><ul><li><a href="programs.html#warriors">The Warriors</a></li><li><a href="programs.html#erl">ERL</a></li><li><a href="programs.html#chess">Chess Club</a></li><li><a href="programs.html">Sports League</a></li></ul></div>
+    <div class="ft-col"><h5>Contact</h5><ul class="ft-contact"><li><span class="ico">📍</span><span>Winton, CA 95388</span></li><li><span class="ico">📞</span><span>209-626-6133</span></li><li><span class="ico">✉</span><span>risingempowermentministries@gmail.com</span></li><li><span class="ico">🌐</span><span>risingempowermentsportsministries.org</span></li></ul></div>
+  </div>
+  <div class="ft-bottom"><p>© 2025 Rising Empowerment Sports Ministries · All rights reserved · <a href="#">Privacy Policy</a></p><div class="ft-badge">✞ &nbsp;501(c)(3) Nonprofit Organization</div></div>
+</footer>
+<script src="assets/main.js"></script>
+<script>
+document.querySelectorAll('.faq-q').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    const item=this.parentElement;
+    const wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!wasOpen) item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>

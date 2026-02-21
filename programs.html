@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Programs | Rising Empowerment Sports Ministries</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+/* ── PROGRAMS-SPECIFIC ── */
+.prog-full{background:var(--white)}
+.prog-item{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+  padding:80px 0;
+  border-bottom:1px solid var(--border);
+}
+.prog-item:last-child{border-bottom:none}
+.prog-item.reverse .prog-item-img{order:-1}
+.prog-item-logo{
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  padding:60px 40px;position:relative;overflow:hidden;
+  min-height:340px;
+}
+.prog-item-logo::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at center,rgba(244,180,0,.08) 0%,transparent 70%);
+}
+.prog-item-logo img{
+  max-width:240px;width:100%;height:auto;
+  filter:drop-shadow(0 16px 40px rgba(0,0,0,.5));
+  position:relative;z-index:1;
+}
+.prog-tag{
+  display:inline-block;
+  font-family:'Oswald',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;
+  padding:5px 14px;margin-bottom:16px;
+}
+.tag-g{background:var(--gold);color:var(--navy)}
+.tag-r{background:var(--red);color:#fff}
+.tag-b{background:#1a3a7a;color:#fff}
+.prog-item-text .s-h{margin-bottom:14px}
+.prog-item-text .s-p{margin-bottom:20px;max-width:100%}
+.prog-features{list-style:none;margin-bottom:28px}
+.prog-features li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:var(--muted);line-height:1.6;
+  padding:8px 0;border-bottom:1px solid var(--border);
+}
+.prog-features li:last-child{border-bottom:none}
+.prog-features li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* erl special */
+.erl-band{
+  background:var(--off);
+  border:1px solid var(--border);
+  padding:40px;
+  display:flex;align-items:flex-start;gap:20px;
+  margin-top:28px;
+}
+.erl-band-icon{font-size:32px;flex-shrink:0}
+.erl-band-text h4{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:6px;letter-spacing:.5px}
+.erl-band-text p{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* league section */
+.league{background:var(--navy);padding:96px 7%}
+.league-inner{max-width:1260px;margin:0 auto;text-align:center}
+.league-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.06);margin-top:52px}
+.lg-box{
+  background:var(--navy2);padding:40px 24px;
+  transition:background .25s;
+  position:relative;overflow:hidden;
+}
+.lg-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.lg-box:hover{background:#1a2f52}
+.lg-box:hover::before{transform:scaleX(1)}
+.lg-icon{font-size:36px;margin-bottom:16px}
+.lg-title{font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:10px}
+.lg-text{font-size:13px;color:rgba(255,255,255,.45);line-height:1.65}
+
+@media(max-width:1024px){
+  .prog-item{grid-template-columns:1fr;gap:40px}
+  .prog-item.reverse .prog-item-img{order:0}
+  .league-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){.league-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="index.html" class="h-logo"><img src="assets/logo-main.png" alt="Rising Empowerment Sports Ministries"/></a>
+  <ul class="h-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="get-involved.html#donate" class="donate-btn">Donate</a></li>
+  </ul>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a><span>/</span><span>Programs</span></div>
+    <h1>OUR <span>PROGRAMS</span></h1>
+    <p>From competitive sports teams to at-risk youth programs and chess clubs — every program is built on faith, purpose, and the belief that every child deserves a chance to rise.</p>
+  </div>
+</div>
+<div class="hero-bar"></div>
+
+<!-- PROGRAMS -->
+<section class="section prog-full">
+  <div class="s-inner">
+
+    <!-- Warriors -->
+    <div class="prog-item" id="warriors">
+      <div class="prog-item-logo reveal">
+        <img src="assets/logo-warriors.jpg" alt="The Warriors"/>
+      </div>
+      <div class="prog-item-text reveal d1">
+        <span class="prog-tag tag-g">Sports Team</span>
+        <h2 class="s-h">THE <span>WARRIORS</span></h2>
+        <p class="s-p">Our flagship sports team where young athletes compete, grow, and are rooted in faith. The Warriors are more than a team — they are a family that plays with purpose on and off the field.</p>
+        <p class="s-p">Every practice, every game, every interaction is an opportunity to build character, develop discipline, and grow closer to God.</p>
+        <ul class="prog-features">
+          <li>Competitive team sports in multiple disciplines</li>
+          <li>Faith-based coaching and mentorship</li>
+          <li>Character development through competition</li>
+          <li>Open to youth of all skill levels</li>
+          <li>Community events and outreach</li>
+        </ul>
+        <a href="get-involved.html" class="btn btn-gold">Join the Warriors</a>
+      </div>
+    </div>
+
+    <!-- ERL -->
+    <div class="prog-item reverse" id="erl">
+      <div class="prog-item-text reveal">
+        <span class="prog-tag tag-r">At-Risk Youth</span>
+        <h2 class="s-h">EMPOWERMENT <span>REDEMPTION</span> LEAGUE</h2>
+        <p class="s-p">The ERL is specifically designed for at-risk youth — young people who need more than a game to play. They need a safe space, a community, and a path forward. That's exactly what we provide.</p>
+        <p class="s-p">Through structured sports programming, mentorship, and faith-based support, the ERL walks alongside young people who are facing real challenges and gives them real hope.</p>
+        <ul class="prog-features">
+          <li>Safe, structured environment for at-risk youth</li>
+          <li>One-on-one and group mentorship</li>
+          <li>Sports-based rehabilitation and confidence building</li>
+          <li>Faith-centered support and counseling</li>
+          <li>Pathways to other RESM programs</li>
+        </ul>
+        <div class="erl-band">
+          <div class="erl-band-icon">❤️</div>
+          <div class="erl-band-text">
+            <h4>Redemption is Real</h4>
+            <p>No matter where a young person has been, we believe their best days are ahead. The ERL exists to prove that — one life at a time.</p>
+          </div>
+        </div>
+      </div>
+      <div class="prog-item-logo reveal d1" style="background:linear-gradient(140deg,#1e0610,#38080f)">
+        <img src="assets/logo-erl.png" alt="Empowerment Redemption League"/>
+      </div>
+    </div>
+
+    <!-- Chess -->
+    <div class="prog-item" id="chess">
+      <div class="prog-item-logo reveal" style="background:linear-gradient(140deg,#060f1e,#0d1d38)">
+        <img src="assets/logo-chess.png" alt="Warriors Chess Club"/>
+      </div>
+      <div class="prog-item-text reveal d1">
+        <span class="prog-tag tag-b">Mental Skills</span>
+        <h2 class="s-h">WARRIORS <span>CHESS CLUB</span></h2>
+        <p class="s-p">Champions think before they act. The Warriors Chess Club was created to develop the mental side of our athletes — building strategic thinking, patience, focus, and discipline.</p>
+        <p class="s-p">We believe a total athlete is not just physically fit — they are mentally sharp. Chess teaches life lessons that carry far beyond the board.</p>
+        <ul class="prog-features">
+          <li>Weekly chess instruction for all skill levels</li>
+          <li>Strategic thinking and problem-solving development</li>
+          <li>Patience, focus, and emotional discipline</li>
+          <li>Faith-based leadership lessons through the game</li>
+          <li>Tournaments and competitive play</li>
+        </ul>
+        <a href="get-involved.html" class="btn btn-gold">Join the Chess Club</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEAGUE -->
+<section class="league">
+  <div class="league-inner">
+    <div class="s-label" style="justify-content:center">Coming Soon</div>
+    <h2 class="s-h light">THE RESM <span>SPORTS LEAGUE</span></h2>
+    <p class="s-p light" style="margin:0 auto;text-align:center">A full faith-based sports league is in development — bringing structured competition, schedules, and standings to our community.</p>
+    <div class="league-grid" style="margin-top:52px">
+      <div class="lg-box reveal"><div class="lg-icon">📅</div><div class="lg-title">Game Schedules</div><p class="lg-text">Organized season schedules with regular games and playoffs for all teams.</p></div>
+      <div class="lg-box reveal d1"><div class="lg-icon">🏅</div><div class="lg-title">Standings</div><p class="lg-text">Live standings and team rankings updated throughout the season.</p></div>
+      <div class="lg-box reveal d2"><div class="lg-icon">📊</div><div class="lg-title">Player Stats</div><p class="lg-text">Track individual and team performance across the entire season.</p></div>
+      <div class="lg-box reveal d3"><div class="lg-icon">✞</div><div class="lg-title">Faith-Based</div><p class="lg-text">Every game is played with integrity, respect, and purpose beyond the scoreboard.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Active Programs</div></div>
+    <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Youth Served</div></div>
+    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Community</div></div>
+    <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Faith & Purpose</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand"><img src="assets/logo-main.png" alt="RESM"/><p>A nonprofit organization dedicated to empowering youth through sports, life skills, and faith in Winton, CA.</p><div class="ft-socials"><a href="#" class="fsoc">FB</a><a href="#" class="fsoc">IG</a><a href="#" class="fsoc">YT</a></div></div>
+    <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h5>Programs</h5><ul><li><a href="programs.html#warriors">The Warriors</a></li><li><a href="programs.html#erl">ERL</a></li><li><a href="programs.html#chess">Chess Club</a></li><li><a href="programs.html">Sports League</a></li></ul></div>
+    <div class="ft-col"><h5>Contact</h5><ul class="ft-contact"><li><span class="ico">📍</span><span>Winton, CA 95388</span></li><li><span class="ico">📞</span><span>209-626-6133</span></li><li><span class="ico">✉</span><span>risingempowermentministries@gmail.com</span></li><li><span class="ico">🌐</span><span>risingempowermentsportsministries.org</span></li></ul></div>
+  </div>
+  <div class="ft-bottom"><p>© 2025 Rising Empowerment Sports Ministries · All rights reserved · <a href="#">Privacy Policy</a></p><div class="ft-badge">✞ &nbsp;501(c)(3) Nonprofit Organization</div></div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

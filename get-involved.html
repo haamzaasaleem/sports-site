@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Get Involved | Rising Empowerment Sports Ministries</title>
+<link rel="stylesheet" href="assets/style.css"/>
+<style>
+/* ── GET INVOLVED SPECIFIC ── */
+.ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.way-card{background:var(--white);border:1px solid var(--border);padding:36px 28px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.way-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.09);border-color:var(--gold)}
+.way-icon{width:56px;height:56px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.way-card:nth-child(2) .way-icon{background:var(--gold)}
+.way-card:nth-child(3) .way-icon{background:var(--red)}
+.way-title{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:12px}
+.way-text{font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:24px}
+
+/* donate section */
+.donate-section{background:var(--navy);padding:96px 7%;position:relative;overflow:hidden}
+.donate-section::after{content:'GIVE';position:absolute;right:4%;top:50%;transform:translateY(-50%);font-family:'Oswald',sans-serif;font-size:260px;font-weight:700;color:rgba(244,180,0,.04);pointer-events:none;line-height:1}
+.donate-inner{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.donate-text .s-h{color:var(--white)}
+.donate-text .s-h span{color:var(--gold)}
+.donate-text .s-p{color:rgba(255,255,255,.55);margin-bottom:28px;max-width:100%}
+.donate-amounts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.amt-btn{
+  padding:12px 20px;border:2px solid rgba(244,180,0,.3);
+  background:transparent;color:rgba(255,255,255,.7);
+  font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;
+  letter-spacing:1px;cursor:pointer;transition:all .25s;
+}
+.amt-btn:hover,.amt-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.donate-note{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;font-family:'Oswald',sans-serif}
+.donate-card{background:var(--white);padding:44px 36px}
+.donate-card h3{font-family:'Oswald',sans-serif;font-size:22px;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:6px;letter-spacing:.5px}
+.donate-card p{font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:13px 16px;
+  border:1px solid var(--border);
+  font-family:'Inter',sans-serif;font-size:14px;color:var(--text);
+  outline:none;transition:border-color .2s;background:#fff;
+  appearance:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-submit{width:100%;padding:15px;background:var(--gold);color:var(--navy);font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;transition:background .25s;margin-top:4px}
+.form-submit:hover{background:#dba100}
+
+/* volunteer */
+.volunteer{background:var(--off);border-top:1px solid var(--border)}
+.vol-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.vol-roles{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+.v-role{display:flex;align-items:center;gap:14px;padding:16px 20px;background:var(--white);border-left:3px solid var(--gold);transition:transform .25s}
+.v-role:nth-child(even){border-left-color:var(--navy)}
+.v-role:hover{transform:translateX(6px)}
+.v-role-icon{font-size:22px;flex-shrink:0}
+.v-role-title{font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:var(--navy);letter-spacing:.5px}
+.v-role-desc{font-size:12px;color:var(--muted)}
+
+/* register */
+.register{background:var(--white);border-top:1px solid var(--border)}
+.reg-form{max-width:700px;margin:48px auto 0}
+
+@media(max-width:1024px){
+  .donate-inner{grid-template-columns:1fr;gap:48px}
+  .vol-grid{grid-template-columns:1fr;gap:40px}
+}
+@media(max-width:768px){
+  .ways-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .donate-section{padding:70px 5%}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a href="index.html" class="h-logo"><img src="assets/logo-main.png" alt="Rising Empowerment Sports Ministries"/></a>
+  <ul class="h-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="programs.html">Programs</a></li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#donate" class="donate-btn">Donate</a></li>
+  </ul>
+  <div class="burger" id="burger"><span></span><span></span><span></span></div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-breadcrumb"><a href="index.html">Home</a><span>/</span><span>Get Involved</span></div>
+    <h1>GET <span>INVOLVED</span></h1>
+    <p>Whether you want to donate, volunteer, register your child, or partner with us — there's a place for you in the Rising Empowerment family.</p>
+  </div>
+</div>
+<div class="hero-bar"></div>
+
+<!-- 3 WAYS -->
+<section class="section" style="background:var(--off);border-bottom:1px solid var(--border)">
+  <div class="s-inner">
+    <div class="s-label">How You Can Help</div>
+    <h2 class="s-h">THREE WAYS TO <span>MAKE AN IMPACT</span></h2>
+    <div class="ways-grid">
+      <div class="way-card reveal">
+        <div class="way-icon">💛</div>
+        <div class="way-title">Donate</div>
+        <p class="way-text">Your financial support keeps our programs running, puts equipment in kids' hands, and opens doors for youth who might not otherwise have the opportunity to participate.</p>
+        <a href="#donate" class="btn btn-gold">Give Now</a>
+      </div>
+      <div class="way-card reveal d1">
+        <div class="way-icon">🤝</div>
+        <div class="way-title">Volunteer</div>
+        <p class="way-text">Share your time, skills, and passion with our youth. Whether you're a coach, mentor, event helper, or administrative support — we need you on our team.</p>
+        <a href="#volunteer" class="btn btn-outline-navy">Volunteer</a>
+      </div>
+      <div class="way-card reveal d2">
+        <div class="way-icon">⚽</div>
+        <div class="way-title">Register</div>
+        <p class="way-text">Ready to join one of our programs? Register your child for the Warriors team, the ERL, or the Warriors Chess Club and become part of the RESM family.</p>
+        <a href="#register" class="btn btn-outline-navy">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate-section" id="donate">
+  <div class="donate-inner">
+    <div class="donate-text">
+      <div class="s-label">Support the Mission</div>
+      <h2 class="s-h">YOUR GIFT <span>CHANGES</span> A LIFE.</h2>
+      <p class="s-p">Every dollar you invest in Rising Empowerment Sports Ministries goes directly to youth programs, equipment, facilities, and mentorship. You're not just donating — you're changing the trajectory of a child's life.</p>
+      <div class="donate-amounts">
+        <button class="amt-btn">$25</button>
+        <button class="amt-btn active">$50</button>
+        <button class="amt-btn">$100</button>
+        <button class="amt-btn">$250</button>
+        <button class="amt-btn">Custom</button>
+      </div>
+      <p class="donate-note">✞ &nbsp;501(c)(3) Nonprofit · All donations are tax deductible</p>
+    </div>
+    <div class="donate-card reveal">
+      <h3>Make a Donation</h3>
+      <p>Fill out the form below and we will follow up with payment instructions. Thank you for your generosity!</p>
+      <form onsubmit="return false">
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" placeholder="First name"/></div>
+          <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="form-group"><label>Donation Amount</label><input type="text" placeholder="$ Enter amount"/></div>
+        <div class="form-group">
+          <label>Dedicate this gift to a program</label>
+          <select><option value="">General Support</option><option>The Warriors</option><option>Empowerment Redemption League</option><option>Warriors Chess Club</option></select>
+        </div>
+        <div class="form-group"><label>Message (Optional)</label><textarea rows="3" placeholder="Leave a message..."></textarea></div>
+        <button type="submit" class="form-submit">Submit Donation →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER -->
+<section class="section volunteer" id="volunteer">
+  <div class="s-inner">
+    <div class="vol-grid">
+      <div>
+        <div class="s-label">Give Your Time</div>
+        <h2 class="s-h">BECOME A <span>VOLUNTEER</span></h2>
+        <p class="s-p">Our volunteers are the backbone of everything we do. Whether you have 2 hours a week or 20, your time makes a real difference in the lives of the youth we serve.</p>
+        <p class="s-p" style="margin-top:16px">We welcome people of all backgrounds and skill sets. If you have a heart for youth and a desire to serve, there's a place for you here.</p>
+        <div style="margin-top:32px">
+          <a href="contact.html" class="btn btn-gold">Apply to Volunteer</a>
+        </div>
+      </div>
+      <div>
+        <div class="vol-roles">
+          <div class="v-role reveal"><div class="v-role-icon">🏆</div><div><div class="v-role-title">Sports Coach / Assistant</div><div class="v-role-desc">Help lead practices, develop athletes, and mentor young competitors.</div></div></div>
+          <div class="v-role reveal d1"><div class="v-role-icon">📖</div><div><div class="v-role-title">Faith Mentor</div><div class="v-role-desc">Guide youth in scripture study, devotionals, and spiritual growth.</div></div></div>
+          <div class="v-role reveal d2"><div class="v-role-icon">♟️</div><div><div class="v-role-title">Chess Club Instructor</div><div class="v-role-desc">Teach chess fundamentals and strategic thinking to our youth members.</div></div></div>
+          <div class="v-role reveal"><div class="v-role-icon">📸</div><div><div class="v-role-title">Media / Photography</div><div class="v-role-desc">Capture moments, create content, and help tell our story online.</div></div></div>
+          <div class="v-role reveal d1"><div class="v-role-icon">🎪</div><div><div class="v-role-title">Event Support</div><div class="v-role-desc">Help organize, set up, and run community events and tournaments.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="section register" id="register" style="border-top:1px solid var(--border)">
+  <div class="s-inner" style="text-align:center">
+    <div class="s-label" style="justify-content:center">Join a Program</div>
+    <h2 class="s-h">REGISTER YOUR <span>CHILD</span></h2>
+    <p class="s-p" style="margin:0 auto 0">Ready to get your child involved? Fill out the form below and our team will reach out with next steps and program details.</p>
+    <div class="reg-form">
+      <form onsubmit="return false">
+        <div class="form-row" style="margin-top:32px">
+          <div class="form-group"><label>Parent / Guardian First Name</label><input type="text" placeholder="First name"/></div>
+          <div class="form-group"><label>Parent / Guardian Last Name</label><input type="text" placeholder="Last name"/></div>
+        </div>
+        <div class="form-group"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="(xxx) xxx-xxxx"/></div>
+        <div class="form-row">
+          <div class="form-group"><label>Child's Name</label><input type="text" placeholder="Child's full name"/></div>
+          <div class="form-group"><label>Child's Age</label><input type="number" placeholder="Age"/></div>
+        </div>
+        <div class="form-group">
+          <label>Program of Interest</label>
+          <select><option value="">Select a program...</option><option>The Warriors</option><option>Empowerment Redemption League (ERL)</option><option>Warriors Chess Club</option><option>Not sure — contact me</option></select>
+        </div>
+        <div class="form-group"><label>Additional Notes</label><textarea rows="3" placeholder="Any additional information..."></textarea></div>
+        <button type="submit" class="form-submit">Submit Registration →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">3+</div><div class="stat-l">Active Programs</div></div>
+    <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Youth Served</div></div>
+    <div class="stat"><div class="stat-n">1</div><div class="stat-l">Community</div></div>
+    <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Faith & Purpose</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div class="ft-brand"><img src="assets/logo-main.png" alt="RESM"/><p>A nonprofit organization dedicated to empowering youth through sports, life skills, and faith in Winton, CA.</p><div class="ft-socials"><a href="#" class="fsoc">FB</a><a href="#" class="fsoc">IG</a><a href="#" class="fsoc">YT</a></div></div>
+    <div class="ft-col"><h5>Navigate</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="programs.html">Programs</a></li><li><a href="get-involved.html">Get Involved</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h5>Programs</h5><ul><li><a href="programs.html#warriors">The Warriors</a></li><li><a href="programs.html#erl">ERL</a></li><li><a href="programs.html#chess">Chess Club</a></li><li><a href="programs.html">Sports League</a></li></ul></div>
+    <div class="ft-col"><h5>Contact</h5><ul class="ft-contact"><li><span class="ico">📍</span><span>Winton, CA 95388</span></li><li><span class="ico">📞</span><span>209-626-6133</span></li><li><span class="ico">✉</span><span>risingempowermentministries@gmail.com</span></li><li><span class="ico">🌐</span><span>risingempowermentsportsministries.org</span></li></ul></div>
+  </div>
+  <div class="ft-bottom"><p>© 2025 Rising Empowerment Sports Ministries · All rights reserved · <a href="#">Privacy Policy</a></p><div class="ft-badge">✞ &nbsp;501(c)(3) Nonprofit Organization</div></div>
+</footer>
+<script src="assets/main.js"></script>
+<script>
+document.querySelectorAll('.amt-btn').forEach(btn => {
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('.amt-btn').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
